@@ -1,0 +1,371 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Towards Automated and Trustworthy Machine Learning | Minghao's Page</title><meta name="keywords" content="Seminar Summary"><meta name="author" content="Minghao Wang"><meta name="copyright" content="Minghao Wang"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Definitions    What is learning?  Observation --&gt; Learning --&gt; Skill    Skill: How to make decision (action)  Classify an image Detect object Translate a sentence from one language to another Le">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Towards Automated and Trustworthy Machine Learning">
+<meta property="og:url" content="http://apple1203.github.io/posts/24150.html">
+<meta property="og:site_name" content="Minghao&#39;s Page">
+<meta property="og:description" content="Definitions    What is learning?  Observation --&gt; Learning --&gt; Skill    Skill: How to make decision (action)  Classify an image Detect object Translate a sentence from one language to another Le">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://apple1203.github.io/medias/PostPics/hkust.jpg">
+<meta property="article:published_time" content="2022-08-17T06:00:00.000Z">
+<meta property="article:modified_time" content="2022-10-06T19:43:14.092Z">
+<meta property="article:author" content="Minghao Wang">
+<meta property="article:tag" content="Seminar Summary">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://apple1203.github.io/medias/PostPics/hkust.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://apple1203.github.io/posts/24150"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: {"limitDay":500,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Towards Automated and Trustworthy Machine Learning',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-10-07 03:43:14'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/minghao.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">16</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/medias/PostPics/hkust.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Minghao's Page</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Towards Automated and Trustworthy Machine Learning</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-08-17T06:00:00.000Z" title="发表于 2022-08-17 14:00:00">2022-08-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-10-06T19:43:14.092Z" title="更新于 2022-10-07 03:43:14">2022-10-07</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Towards Automated and Trustworthy Machine Learning"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="Definitions">Definitions</h2>
+<p><img src="https://raw.githubusercontent.com/Apple1203/apple1203.github.io/master/medias/postaddinpics/0817/Fig1.png" alt=""></p>
+<ul>
+<li>
+<p>What is learning?</p>
+<ul>
+<li>Observation --&gt; Learning --&gt; Skill</li>
+</ul>
+</li>
+<li>
+<p>Skill: How to make decision (action)</p>
+<ul>
+<li>Classify an image</li>
+<li>Detect object</li>
+<li>Translate a sentence from one language to another</li>
+<li>Learn to play a game</li>
+<li>…</li>
+</ul>
+</li>
+<li>
+<p>Machine learning: (Automatic the learning process)  传统的算法是给一些既定的算法或规则进行运算，根据环境的不同进行定制，机器学习就是希望机器能够自动归纳出决策的步骤。</p>
+<ul>
+<li>Data --&gt; Machine Learning --&gt; Skill (decision rules) 机器学习只需给定数据和算法就能自动化进行这样的流程。</li>
+</ul>
+</li>
+</ul>
+<h2 id="Formalization">Formalization</h2>
+<ul>
+<li>input : <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span></span></span></span></li>
+<li>output : <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span></span></li>
+<li>target function to be learned: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><mi>x</mi><mo>−</mo><mo>−</mo><mo>&gt;</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">f: x--&gt;y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord">−</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span></span></li>
+<li>data: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mo stretchy="false">{</mo><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>y</mi><mn>1</mn></msub><mo stretchy="false">)</mo><mo separator="true">,</mo><mo stretchy="false">(</mo><msub><mi>x</mi><mn>2</mn></msub><mo separator="true">,</mo><msub><mi>y</mi><mn>2</mn></msub><mo stretchy="false">)</mo><mo separator="true">,</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo separator="true">,</mo><mo stretchy="false">(</mo><msub><mi>x</mi><mi>N</mi></msub><mo separator="true">,</mo><msub><mi>y</mi><mi>N</mi></msub><mo stretchy="false">)</mo><mo stretchy="false">}</mo></mrow><annotation encoding="application/x-tex">D=\{(x_1,y_1), (x_2,y_2),...,(x_N,y_N)\}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">...</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.10903em;">N</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.10903em;">N</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)}</span></span></span></span></li>
+<li>hypothesis (model) : <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi></mrow><annotation encoding="application/x-tex">g</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span></span></span></span></li>
+</ul>
+<h2 id="Machine-Learning-Problems">Machine Learning Problems</h2>
+<ul>
+<li>Supervised Learning: every <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">x_n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> comes with <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>y</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">y_n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> (label)</li>
+<li>Unsupervised Learning: only <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">x_n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>, no <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>y</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">y_n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 有两个数据簇(cluster)，希望把这两个cluster分开</li>
+<li>Semi-supervised Learning: Some labeled data and some unlabeled data</li>
+<li>Transfer Learning: Transfer knowledge from source datasets to a target dataset 会下国际象棋，迁移到下中国象棋</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Apple1203/apple1203.github.io/master/medias/postaddinpics/0817/Fig2.png" alt=""></p>
+<h2 id="Classical-Questions">Classical Questions</h2>
+<h3 id="Binary-Classification">Binary Classification</h3>
+<p>credit: approve/ not approve<br>
+…</p>
+<h3 id="Regression">Regression</h3>
+<p>Stock price prediction</p>
+<p>Movie rating prediction</p>
+<h3 id="Multi-class-classification">Multi-class classification</h3>
+<p>object classification (MNIST, …)</p>
+<h3 id="Multi-label-prediction">Multi-label prediction</h3>
+<p><strong>multi-class problem</strong> or <strong>multi-label</strong></p>
+<p>Document categorization</p>
+<p>Document/image tagging</p>
+<p>…</p>
+<h3 id="Extreme-classification-large-output-space-problems">Extreme classification (large output space problems)</h3>
+<p>millions of billions of labels (but usually each sample only has few labels)</p>
+<p>recommendation systems: predict a subset of preferred items for each user</p>
+<p>document retrieval or search: predict a subset of related articles for a query</p>
+<h3 id="Structural-prediction">Structural prediction</h3>
+<p>POS in NLP: I (pronoun) love (verb) ML (noun)</p>
+<h3 id="Multicalss-classification-for-each-word-word-word-class">Multicalss classification for each word (word --&gt; word class)</h3>
+<p>not using information of the whole sentence</p>
+<h3 id="Structure-prediction-problem">Structure prediction problem</h3>
+<p>sentence --&gt; structure (class of each word)</p>
+<hr>
+<p>Challenges : trustworthy &amp; human effort</p>
+<p>machine learning pipeline:</p>
+<p>Data (SQL DB, Web Data, Cloud Sourcing,…)–&gt; prepare Data --&gt; build &amp; train --&gt; deploy</p>
+<ul>
+<li>What feature?</li>
+</ul>
+<p>constraint / Rule, Budget, Efficiency</p>
+<ul>
+<li>Which model?</li>
+</ul>
+<p>Linear Model (LR, SVM, …), Boosting Model (GBDT, RF, …), Neural Network (FC, Convolutional, Recurrent, …)</p>
+<ul>
+<li>Which parameter?</li>
+</ul>
+<p>Hyperparameter, Optimizer</p>
+<h2 id="Automated-ML">Automated ML</h2>
+<p>AutoML simplifies each step in the machine learning process,from handling a raw dataset to deploying a practical machine learning model.</p>
+<p><img src="https://raw.githubusercontent.com/Apple1203/apple1203.github.io/master/medias/postaddinpics/0817/Fig3.png" alt=""></p>
+<p><strong>Neural Architecture Search [ECCV’21, ICLR’21]</strong></p>
+<h3 id="怎么选取一个比较好的神经网络？">怎么选取一个比较好的神经网络？</h3>
+<ul>
+<li>
+<p>both <strong>accuracy</strong> and <strong>efficiency</strong></p>
+</li>
+<li>
+<p>Evolutionary Algorithms (Miller et al 89, Schaffer et al. 92, Verbancsics &amp; Harguess 13)</p>
+</li>
+</ul>
+<p>从已知选项中挑几个进行评估，通过某种技术获取更好的选项。无法保证一定能拿到更好的结果。</p>
+<ul>
+<li>
+<p>Bayesian Optimization (Snoek et al 12. Domhan et al 15)</p>
+</li>
+<li>
+<p>Reinforcement Learning</p>
+</li>
+</ul>
+<p>RL通过一直增大Controller的结构可以保证得到一个更好的model</p>
+<p><img src="https://raw.githubusercontent.com/Apple1203/apple1203.github.io/master/medias/postaddinpics/0817/Fig4.png" alt=""></p>
+<p>以上算法都很慢，因为每产生一个configs就要更新model，在每个迭代中要重新训练模型很多很多次，迭代太多开销特别大。</p>
+<ul>
+<li>Supernet: ensemble of many architectures</li>
+</ul>
+<p>所有网络共享权重，先训练好再裁剪。是一种continuous relaxation (退化)，把所有路径都加起来然后训练选择其中一个</p>
+<p><img src="https://raw.githubusercontent.com/Apple1203/apple1203.github.io/master/medias/postaddinpics/0817/Fig5.png" alt=""></p>
+<p><strong>(b) is a supernet</strong></p>
+<p><img src="https://raw.githubusercontent.com/Apple1203/apple1203.github.io/master/medias/postaddinpics/0817/Fig6.jpg" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/Apple1203/apple1203.github.io/master/medias/postaddinpics/0817/Fig7.png" alt=""></p>
+<p>Bi-Level optimization tp obtain supernet.</p>
+<p><img src="https://raw.githubusercontent.com/Apple1203/apple1203.github.io/master/medias/postaddinpics/0817/Fig8.png" alt=""></p>
+<h3 id="Auto-ML有哪些类型？">Auto ML有哪些类型？</h3>
+<ul>
+<li>NAS</li>
+<li>Hyperpatameter Optimization</li>
+<li>Meta learning and learn to learn</li>
+<li>Automated RL</li>
+<li>AutoML in Physical World</li>
+<li>…</li>
+</ul>
+<p>目前只追求精度，不考虑其他信息。但也存在其他问题，比如精度不一定表明效果特别好。</p>
+<p>examples：</p>
+<ul>
+<li>
+<p>Researchers trick Tesla Autopilot into steering into oncoming traffic。在路上贴三个点可以使特斯拉偏离方向；</p>
+</li>
+<li>
+<p>ML炒股某时做出奇怪的决定导致大盘剧烈波动；</p>
+</li>
+<li>
+<p>聊天机器人存在racism，奇怪翻译等。</p>
+</li>
+</ul>
+<p>因而<strong>可信化机器学习</strong>很重要</p>
+<h2 id="Trustworthy">Trustworthy</h2>
+<ul>
+<li>
+<p>Not alchemy<br>
+可解释性Explainability<br>
+鲁棒性Robustness<br>
+安全性Security<br>
+隐私性Privacy<br>
+公平性Fairness…</p>
+</li>
+<li>
+<p>Establish model understanding</p>
+</li>
+</ul>
+<h3 id="Adversarial-Robustness">Adversarial Robustness</h3>
+<p>目前的机器学习会被某些噪声影响</p>
+<p>Stop sign + 0.001 * Noise = Stop sign (recognised of <strong>speed limit 40</strong>)</p>
+<p>Accuracy <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo mathvariant="normal">≠</mo></mrow><annotation encoding="application/x-tex">\neq</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mrel"><span class="mrel"><span class="mord vbox"><span class="thinbox"><span class="rlap"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="inner"><span class="mord"><span class="mrel"></span></span></span><span class="fix"></span></span></span></span></span><span class="mrel">=</span></span></span></span></span> Robustness</p>
+<p>单独追求高精度AI可能导致一些trouble。</p>
+<h3 id="为什么鲁棒性重要？">为什么鲁棒性重要？</h3>
+<p>机器学习会被采用在很多危险或敏感领域，机械臂，航空系统，。。。，如果不够鲁棒性可能会导致系统瘫痪或错乱，这是不可接受的；</p>
+<p>鲁棒性可以指导我们构建更好的模型，有些工作利用对抗样本提升模型表现</p>
+<h3 id="为什么要研究可解释性？">为什么要研究可解释性？</h3>
+<p>可以看成是一种对模型的debug，现在很多神经网络没有这种能力；</p>
+<p>对模型更好控制 get human-in-the-loop；</p>
+<p>learn new insights，比如Alphago告诉我们一些新的特殊的下法，让我们更好的做一些任务，比如alphafold可以预测蛋白的结构和形成方式等</p>
+<p><img src="https://raw.githubusercontent.com/Apple1203/apple1203.github.io/master/medias/postaddinpics/0817/Fig9.png" alt=""></p>
+<h3 id="可解释性的应用：">可解释性的应用：</h3>
+<ul>
+<li>
+<p>Debugging</p>
+</li>
+<li>
+<p>Bias detection</p>
+</li>
+<li>
+<p>Provide recourse to individuals who are adversely affected by model predictions (比如信用卡被拒了之后可以给你一些建议让你之后能获批)</p>
+</li>
+<li>
+<p>Assess if and when to trust model predictions</p>
+</li>
+</ul>
+<h2 id="Useful-Resources">Useful Resources:</h2>
+<p>Deep Learning Book: <a target="_blank" rel="noopener" href="http://www.deeplearningbook.org">www.deeplearningbook.org</a></p>
+<p>CS229: Machine Learning from Stanford</p>
+<p>Open framework: sklearn, tensorflow, PyTorch</p>
+<h2 id="Questions">Questions:</h2>
+<blockquote>
+<p>机器学习的未来在于从大量有相似规律的数据中寻求规律，从而对未来可能会出现的情况进行预测，但是当没有足够的样本支撑的时候，机器学习的作用是不是就被缩小了，在这种情况下，机器学习如何在小样本甚至零样本的情况下进行学习，如何规避数据样本不足带来的负面影响?</p>
+</blockquote>
+<blockquote>
+<p>ANS: Supervised Learning对样本要求很高，但是unsupervised learning或者reinforcement learning对样本数量要求很低。</p>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://apple1203.github.io">Minghao Wang</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://apple1203.github.io/posts/24150.html">http://apple1203.github.io/posts/24150.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://apple1203.github.io" target="_blank">Minghao's Page</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Seminar-Summary/">Seminar Summary</a></div><div class="post_share"><div class="social-share" data-image="/medias/PostPics/hkust.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/18780.html"><img class="prev-cover" src="/medias/PostPics/hkust.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">本周进度20220815</div></div></a></div><div class="next-post pull-right"><a href="/posts/59723.html"><img class="next-cover" src="/medias/PostPics/16.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">TENT Fully Test-time Adaptation by Entropy Minimization</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/48709.html" title="CYBER SECURITY 1.0 &quot;CYBER SECURITY FOR START-UPS&quot;"><img class="cover" src="/medias/PostPics/16.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-30</div><div class="title">CYBER SECURITY 1.0 &quot;CYBER SECURITY FOR START-UPS&quot;</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/minghao.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Minghao Wang</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">16</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/apple1203"><i class="fab fa-github"></i><span>Follow Me @ github</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/apple1203" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:mwangcx@connect.ust.hk" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="GoogleScholar:https://scholar.google.com/citations?hl=zh-TW&amp;user=7MeFEVwAAAAJ" target="_blank" title="GoogleScholar"><i class="fa-solid fa-graduation-cap"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content"><p>17/09&nbsp;One&nbsp;paper&nbsp;was&nbsp;accepted&nbsp;by&nbsp;<br>Frontiers&nbsp;in&nbsp;Public&nbsp;Health!&nbsp;(if=6.7)<br>26/07&nbsp;Joined&nbsp;Smart&nbsp;Lab@HKUST</p></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Definitions"><span class="toc-number">1.</span> <span class="toc-text">Definitions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Formalization"><span class="toc-number">2.</span> <span class="toc-text">Formalization</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Machine-Learning-Problems"><span class="toc-number">3.</span> <span class="toc-text">Machine Learning Problems</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Classical-Questions"><span class="toc-number">4.</span> <span class="toc-text">Classical Questions</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Binary-Classification"><span class="toc-number">4.1.</span> <span class="toc-text">Binary Classification</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Regression"><span class="toc-number">4.2.</span> <span class="toc-text">Regression</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Multi-class-classification"><span class="toc-number">4.3.</span> <span class="toc-text">Multi-class classification</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Multi-label-prediction"><span class="toc-number">4.4.</span> <span class="toc-text">Multi-label prediction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Extreme-classification-large-output-space-problems"><span class="toc-number">4.5.</span> <span class="toc-text">Extreme classification (large output space problems)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Structural-prediction"><span class="toc-number">4.6.</span> <span class="toc-text">Structural prediction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Multicalss-classification-for-each-word-word-word-class"><span class="toc-number">4.7.</span> <span class="toc-text">Multicalss classification for each word (word --&gt; word class)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Structure-prediction-problem"><span class="toc-number">4.8.</span> <span class="toc-text">Structure prediction problem</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Automated-ML"><span class="toc-number">5.</span> <span class="toc-text">Automated ML</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%8E%E4%B9%88%E9%80%89%E5%8F%96%E4%B8%80%E4%B8%AA%E6%AF%94%E8%BE%83%E5%A5%BD%E7%9A%84%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%EF%BC%9F"><span class="toc-number">5.1.</span> <span class="toc-text">怎么选取一个比较好的神经网络？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Auto-ML%E6%9C%89%E5%93%AA%E4%BA%9B%E7%B1%BB%E5%9E%8B%EF%BC%9F"><span class="toc-number">5.2.</span> <span class="toc-text">Auto ML有哪些类型？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Trustworthy"><span class="toc-number">6.</span> <span class="toc-text">Trustworthy</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Adversarial-Robustness"><span class="toc-number">6.1.</span> <span class="toc-text">Adversarial Robustness</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%B2%81%E6%A3%92%E6%80%A7%E9%87%8D%E8%A6%81%EF%BC%9F"><span class="toc-number">6.2.</span> <span class="toc-text">为什么鲁棒性重要？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E7%A0%94%E7%A9%B6%E5%8F%AF%E8%A7%A3%E9%87%8A%E6%80%A7%EF%BC%9F"><span class="toc-number">6.3.</span> <span class="toc-text">为什么要研究可解释性？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E8%A7%A3%E9%87%8A%E6%80%A7%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A"><span class="toc-number">6.4.</span> <span class="toc-text">可解释性的应用：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Useful-Resources"><span class="toc-number">7.</span> <span class="toc-text">Useful Resources:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Questions"><span class="toc-number">8.</span> <span class="toc-text">Questions:</span></a></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2022 By Minghao Wang</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my <a href="https://apple1203.github.io/">blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (true){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="true"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
